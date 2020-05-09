@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func redChange(_ sender: Any) {
-       changeColorView()
+        changeColorView()
     }
     
     @IBAction func greenChange(_ sender: Any) {
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeColorView() {
-           colorView.backgroundColor = UIColor(red: CGFloat(self.redControl.value)/255, green: CGFloat(self.greenControl.value)/255, blue: CGFloat(self.blueControl.value)/255, alpha: 1)
-       }
+         colorView.backgroundColor = UIColor(red: CGFloat(self.redControl.value)/255, green: CGFloat(self.greenControl.value)/255, blue: CGFloat(self.blueControl.value)/255, alpha: 1)
+        }
 
 }

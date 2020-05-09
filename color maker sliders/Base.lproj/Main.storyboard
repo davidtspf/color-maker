@@ -15,17 +15,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5jU-UG-k0b" userLabel="Red Control">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="5jU-UG-k0b" userLabel="Red Control">
                                 <rect key="frame" x="235" y="177" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="redChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="3Fl-4k-n7d"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zmT-uA-QlN">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="zmT-uA-QlN">
                                 <rect key="frame" x="235" y="246" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="greenChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="J0S-hy-bHq"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vvc-ph-quq">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="vvc-ph-quq">
                                 <rect key="frame" x="235" y="314" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="blueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="3ps-PK-2Zw"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbr-bJ-npD">
                                 <rect key="frame" x="86" y="175" width="73" height="33"/>
@@ -48,26 +57,12 @@
                                 <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tao-C4-0Un" userLabel="Color View">
-                                <rect key="frame" x="117" y="409" width="180" height="165"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5az-G9-W6h">
-                                        <rect key="frame" x="5" y="5" width="170" height="155"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="O8B-Ad-a3D"/>
-                                            <constraint firstAttribute="height" constant="155" id="ZgN-Qn-YLJ"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5az-G9-W6h" userLabel="Color View">
+                                <rect key="frame" x="122" y="371" width="170" height="155"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="165" id="1dO-HE-EeY"/>
-                                    <constraint firstAttribute="centerX" secondItem="5az-G9-W6h" secondAttribute="centerX" id="GNH-w6-aVu"/>
-                                    <constraint firstAttribute="centerY" secondItem="5az-G9-W6h" secondAttribute="centerY" id="Unh-cH-4sa"/>
-                                    <constraint firstAttribute="width" constant="180" id="ZhN-Fs-Ut8"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="bmJ-rv-ITx"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="165" id="kWZ-lM-TQA"/>
+                                    <constraint firstAttribute="width" constant="170" id="O8B-Ad-a3D"/>
+                                    <constraint firstAttribute="height" constant="155" id="ZgN-Qn-YLJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -77,7 +72,7 @@
                     <connections>
                         <outlet property="blueControl" destination="vvc-ph-quq" id="N7B-Ae-aZJ"/>
                         <outlet property="greenControl" destination="zmT-uA-QlN" id="WQV-xv-aaq"/>
-                        <outlet property="redSlider" destination="5jU-UG-k0b" id="s7d-oP-bil"/>
+                        <outlet property="redControl" destination="5jU-UG-k0b" id="ILn-v6-ORp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
